@@ -33,10 +33,10 @@
   <div id="header-wrapper">
     <div id="header" class="container">
       <div id="logo" style="text-align: center;">
-        <h1 style="font-size: 2em;"><a href="#">Robin Tran</a></h1>
+        <h1 style="font-size: 1.80em;"><a href="#">Robin Tran</a></h1>
         <div>
           <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.email %></strong>.
+            Welcome to <strong><%= current_user.email %></strong></br>
             <%= link_to 'Edit profile', edit_user_registration_path %> |
             <%= link_to "Logout", destroy_user_session_path, method: :delete %>
           <% else %>
@@ -47,7 +47,9 @@
       </div>
       <div id="menu">
         <ul>
-          <li><a href="#" title="">Homepage</a></li>
+          <li>
+            <%= link_to("Homepage", root_path) %>
+          </li>
           <li><a href="#" title="">Our Events</a></li>
           <li><a href="#" title="">Gallery</a></li>
           <li><a href="#" title="">About Us</a></li>
