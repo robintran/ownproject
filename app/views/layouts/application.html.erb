@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ownproject</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="wrapper">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Some Store</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "Browse Products"%></li>
+            <li><%= link_to "Price List" %></li>
+            <li><%= link_to "Contact Us" %></li>
+            <li><%= link_to "Cart" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="logo">
+        <h1 style="font-size: 2em;"><a href="#">Conventional</a></h1>
+      </div>
+      <div id="menu">
+        <ul>
+          <li><a href="#" accesskey="1" title="">Homepage</a></li>
+          <li><a href="#" accesskey="2" title="">Our Events</a></li>
+          <li><a href="#" accesskey="3" title="">Gallery</a></li>
+          <li><a href="#" accesskey="4" title="">About Us</a></li>
+          <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="banner" class="container"><img src="assets/img04.jpg" width="1000" height="300" alt="" /></div>
+  <div id="page" class="container">
+    <div id="content">
+      <div id="box1">
+        <%= yield %>
+      </div>
+      <div>
+        <ul class="style1">
+          <li class="first">
+            <h3><em><img src="assets/img01.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Lorem ipsum dolor interdum</h3>
+            <p>Ut vel nisl tristique justo ornare iaculis. Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus.</p>
+            <p><a href="#" class="button-style">Read More</a></p>
+          </li>
+          <li>
+            <h3><em><img src="assets/img02.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Magna phasellus etiam ultrices</h3>
+            <p>Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
+            <p><a href="#" class="button-style">Read More</a></p>
+          </li>
+          <li>
+            <h3><em><img src="assets/img03.jpg" alt="" width="130" height="130" class="alignleft border" /></em>Magna phasellus etiam ultrices</h3>
+            <p>Suspendisse suscipit, orci ac interdum viverra, nulla orci facilisis mi, a ultrices mi lectus vitae felis. Morbi suscipit adipiscing orci et blandit. Morbi a nulla ut tellus blandit placerat a quis eros.</p>
+            <p><a href="#" class="button-style">Read More</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="sidebar">
+      <h2>Fusce ultrices</h2>
+      <ul class="style3">
+        <li class="first">
+          <p class="date">01-14-2013</p>
+          <p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+        </li>
+        <li>
+          <p class="date">01-13-2013</p>
+          <p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+        </li>
+        <li>
+          <p class="date">01-07-2013</p>
+          <p><a href="#">Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.</a></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer">
+    <p>Copyright (c) 2013 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+  </div>
+</div>
+</body>
+</html>
