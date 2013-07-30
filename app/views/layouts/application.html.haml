@@ -1,0 +1,90 @@
+!!!
+%html
+  %head
+    %title Ownproject
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #wrapper
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand{:href => "#"} Robin Tran
+            .nav-collapse
+              %ul.nav
+                %li= link_to "Browse Products"
+                %li= link_to "Price List"
+                %li= link_to "Contact Us"
+                %li= link_to "Cart"
+      #header-wrapper
+        #header.container
+          #logo{:style => "text-align: center;"}
+            %h1{:style => "font-size: 1.80em;"}
+              %a{:href => "#"} Robin Tran
+            %div
+              - if user_signed_in?
+                Welcome to
+                %strong= current_user.email
+                = link_to 'Edit profile', edit_user_registration_path
+                |
+                = link_to "Logout", destroy_user_session_path, method: :delete
+              - else
+                = link_to "Sign up", '#sign-up-popup', class: 'org-btn', role: 'btn', 'data-toggle' => 'modal'
+                |
+                = link_to "Sign up", new_user_registration_path
+                |
+                = link_to "Login", new_user_session_path
+          #menu
+            %ul
+              %li
+                = link_to("Homepage", root_path)
+              %li
+                %a{:href => "#", :title => ""} Our Events
+              %li
+                %a{:href => "#", :title => ""} Gallery
+              %li
+                %a{:href => "#", :title => ""} About Us
+              %li
+                %a{:href => "#", :title => ""} Contact Us
+      #banner.container
+        = image_tag("img04.jpg", :width => '1000', :height => '300')
+      #page.container
+        #content
+          #box1
+            = yield
+        #sidebar
+          %h2 Fusce ultrices
+          %ul.style3
+            %li.first
+              %p.date 01-14-2013
+              %p
+                %a{:href => "#"} Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.
+            %li
+              %p.date 01-13-2013
+              %p
+                %a{:href => "#"} Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.
+            %li
+              %p.date 01-07-2013
+              %p
+                %a{:href => "#"} Vestibulum laoreet lorem sed amet condimentum eget ultrices et mago porttitor nequese blandit.
+      #footer
+        %p
+          Copyright (c) 2013 Sitename.com. All rights reserved. Design by
+          = succeed "." do
+            %a{:href => "http://www.freecsstemplates.org/", :rel => "nofollow"} FreeCSSTemplates.org
+          Photos by
+          = succeed "." do
+            %a{:href => "http://fotogrph.com/"} Fotogrph
+#sign-up-popup.modal.hide.fade
+  .modal-header
+    %button.close{ type: 'button', 'data-dismiss' => 'modal', 'aria-hidden' => true }x
+    %table
+      %tr
+        %td
+          %h3
+            sign-up popup form
